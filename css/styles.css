@@ -1,0 +1,55 @@
+* {
+  font-family: "Jost", sans-serif;
+  color: white;
+}
+
+body {
+  margin: 20px;
+
+  background-color: black;
+}
+
+.example-list {
+  margin: 0;
+  padding: 0;
+}
+
+.example-list-item {
+  display: grid;
+  grid-template-columns: auto 13fr 2fr;
+
+  padding: 10px 0;
+}
+
+.example-list-item:not(:last-child) {
+  border-bottom: 1px dashed white;
+}
+
+.example-list-item-code-block {
+  font-family: monospace;
+  color: antiquewhite;
+
+  white-space: break-spaces;
+}
+
+.example-list-item-action-button:hover {
+  color: black;
+
+  background-color: white;
+}
+
+.example-list-item-action-button {
+  width: 80px;
+  height: 35px;
+
+  margin: auto 0;
+
+  color: white;
+
+  background-color: black;
+
+  border: 1px solid white;
+  border-radius: 4px;
+
+  cursor: pointer;
+}

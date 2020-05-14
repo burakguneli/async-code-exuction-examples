@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Async examples</title>
+  </head>
+
+  <body>
+    <ul class="example-list">
+      <li class="example-list-item">
+        <p class="example-list-item-title">
+          Code Snippet 1
+        </p>
+
+        <code class="example-list-item-code-block">
+          function printHello() {
+            console.log("Hello!");
+          }
+        
+          setTimeout(printHello, 1000);
+        
+          console.log("First console output!");
+        </code>
+
+        <button class="example-list-item-action-button"
+                onclick="runFirstCodeSnippet()">
+          Run
+        </button>
+      </li>
+
+      <li class="example-list-item">
+        <p class="example-list-item-title">
+          Code Snippet 2
+        </p>
+
+        <code class="example-list-item-code-block">
+          function printHello() {
+            console.log("Hello!");
+          }
+        
+          setTimeout(printHello, 0);
+        
+          console.log("First console output!");
+        </code>
+
+        <button class="example-list-item-action-button"
+                onclick="runSecondCodeSnippet()">
+          Run
+        </button>
+      </li>
+
+      <li class="example-list-item">
+        <p class="example-list-item-title">
+          Code Snippet 3
+        </p>
+
+        <code class="example-list-item-code-block">
+          function printHello() {
+            console.log("Hello!");
+          }
+        
+          function blockForThreeSecond() {
+            //some stuff that takes 3 seconds to finish
+        
+            sleep(3000);
+          }
+        
+          setTimeout(printHello, 0);
+        
+          blockForThreeSecond();
+        
+          console.log("First console output!");
+        </code>
+
+        <button class="example-list-item-action-button"
+                onclick="runThirdCodeSnippet()">
+          Run
+        </button>
+      </li>
+
+      <li class="example-list-item">
+        <p class="example-list-item-title">
+          Code Snippet 4
+        </p>
+
+        <code class="example-list-item-code-block">
+          function printData(data) {
+            console.log(data);
+          }
+        
+          const fetchedData = evilFetchAndWaitFunction();
+        
+          printData(fetchedData);
+        
+          console.log("Second console output");
+        </code>
+
+        <button class="example-list-item-action-button"
+                onclick="runFourthCodeSnippet()">
+          Run
+        </button>
+      </li>
+
+      <li class="example-list-item">
+        <p class="example-list-item-title">
+          Code Snippet 5
+        </p>
+
+        <code class="example-list-item-code-block">
+          function printData(response) {
+            jasonifyResponse(response).then(data => console.log(data.name));
+          }
+        
+          const fetchedData = fetch("http://localhost:3000/url");
+        
+          fetchedData.then(printData);
+        
+          console.log("First console output");
+        </code>
+
+        <button class="example-list-item-action-button"
+                onclick="runFifthCodeSnippet()">
+          Run
+        </button>
+      </li>
+
+      <li class="example-list-item">
+        <p class="example-list-item-title">
+          Code Snippet 6
+        </p>
+
+        <code class="example-list-item-code-block">
+          function printData(response) {
+            jasonifyResponse(response).then(data => console.log(data.name));
+          }
+        
+          function printHello() {
+            console.log("Hello!");
+          }
+        
+          function blockForThreeSecond() {
+            // some stuff that takes 3 seconds to finish
+        
+            sleep(3000);
+          }
+        
+          setTimeout(printHello, 0);
+        
+          const fetchedData = fetch("http://localhost:3000/url");
+        
+          fetchedData.then(printData);
+        
+          blockForThreeSecond();
+        
+          console.log("First console output");
+        </code>
+
+        <button class="example-list-item-action-button"
+                onclick="runSixthCodeSnippet()">
+          Run
+        </button>
+      </li>
+    </ul>
+
+
+    <script src="./js/sleep.js"></script>
+    <script src="./js/examples.js"></script>
+  </body>
+</html>
