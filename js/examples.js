@@ -1,5 +1,5 @@
 
-function jasonifyResponse(response) {
+function jsonifyResponse(response) {
   return response.json();
 }
 
@@ -10,6 +10,18 @@ function evilFetchAndWaitFunction() {
 }
 
 function runFirstCodeSnippet() {
+  function printData(data) {
+    console.log(data);
+  }
+
+  const fetchedData = evilFetchAndWaitFunction();
+
+  printData(fetchedData);
+
+  console.log("Second console output");
+}
+
+function runSecondCodeSnippet() {
   function printHello() {
     console.log("Hello!");
   }
@@ -19,7 +31,7 @@ function runFirstCodeSnippet() {
   console.log("First console output!");
 }
 
-function runSecondCodeSnippet() {
+function runThirdCodeSnippet() {
   function printHello() {
     console.log("Hello!");
   }
@@ -29,7 +41,7 @@ function runSecondCodeSnippet() {
   console.log("First console output!");
 }
 
-function runThirdCodeSnippet() {
+function runFourthCodeSnippet() {
   function printHello() {
     console.log("Hello!");
   }
@@ -47,21 +59,9 @@ function runThirdCodeSnippet() {
   console.log("First console output!");
 }
 
-function runFourthCodeSnippet() {
-  function printData(data) {
-    console.log(data);
-  }
-
-  const fetchedData = evilFetchAndWaitFunction();
-
-  printData(fetchedData);
-
-  console.log("Second console output");
-}
-
 function runFifthCodeSnippet() {
   function printData(response) {
-    jasonifyResponse(response).then(data => console.log(data.name));
+    jsonifyResponse(response).then(data => console.log(data.name));
   }
 
   const fetchedData = fetch("http://localhost:3000/url");
@@ -74,6 +74,8 @@ function runFifthCodeSnippet() {
 function runSixthCodeSnippet() {
   function printData(response) {
     console.log("burak");
+
+    // jsonifyResponse(response).then(data => console.log(data.name));
   }
 
   function printHello() {
