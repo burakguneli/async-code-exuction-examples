@@ -15,19 +15,21 @@
         </p>
 
         <code class="example-list-item-code-block">
+          const prefix = "Hi ";
+
           function printData(data) {
             console.log(data);
           }
-        
-          const fetchedData = evilFetchAndWaitFunction();
-        
-          printData(fetchedData);
-        
-          console.log("Second console output");
+
+          console.log(prefix, name);
+
+          printData("welcome!");
+
+          console.log("task finished!");
         </code>
 
         <button class="example-list-item-action-button"
-                onclick="runFirstCodeSnippet()">
+                onclick="runFirstCodeSnippet('burak')">
           Run
         </button>
       </li>
@@ -38,13 +40,15 @@
         </p>
 
         <code class="example-list-item-code-block">
-          function printHello() {
-            console.log("Hello!");
+          function printData(data) {
+            console.log(data);
           }
         
-          setTimeout(printHello, 1000);
+          const fetchedData = evilFetchAndWaitFunction();
         
-          console.log("First console output!");
+          printData(fetchedData);
+        
+          console.log("Second console output");
         </code>
 
         <button class="example-list-item-action-button"
@@ -63,7 +67,7 @@
             console.log("Hello!");
           }
         
-          setTimeout(printHello, 0);
+          setTimeout(printHello, 1000);
         
           console.log("First console output!");
         </code>
@@ -84,15 +88,7 @@
             console.log("Hello!");
           }
         
-          function blockForThreeSecond() {
-            // some stuff that takes 3 seconds to finish
-        
-            sleep(3000);
-          }
-        
           setTimeout(printHello, 0);
-        
-          blockForThreeSecond();
         
           console.log("First console output!");
         </code>
@@ -110,7 +106,7 @@
 
         <code class="example-list-item-code-block">
           function printData(response) {
-            jasonifyResponse(response).then(data => console.log(data.name));
+            jsonifyResponse(response).then(data => console.log(data.name));
           }
         
           const fetchedData = fetch("http://localhost:3000/url");
@@ -135,7 +131,7 @@
           function printData(response) {
             console.log("burak");
         
-            // jasonifyResponse(response).then(data => console.log(data.name));
+            // jsonifyResponse(response).then(data => console.log(data.name));
           }
         
           function printHello() {

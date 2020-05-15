@@ -9,7 +9,21 @@ function evilFetchAndWaitFunction() {
   return "burak";
 }
 
-function runFirstCodeSnippet() {
+function runFirstCodeSnippet(name) {
+  const prefix = "Hi";
+
+  function printData(data) {
+    console.log(data);
+  }
+
+  console.log(prefix, name);
+
+  printData("welcome!");
+
+  console.log("welcoming our guest task is complete!");
+}
+
+function runSecondCodeSnippet() {
   function printData(data) {
     console.log(data);
   }
@@ -21,7 +35,7 @@ function runFirstCodeSnippet() {
   console.log("Second console output");
 }
 
-function runSecondCodeSnippet() {
+function runThirdCodeSnippet() {
   function printHello() {
     console.log("Hello!");
   }
@@ -31,30 +45,12 @@ function runSecondCodeSnippet() {
   console.log("First console output!");
 }
 
-function runThirdCodeSnippet() {
-  function printHello() {
-    console.log("Hello!");
-  }
-
-  setTimeout(printHello, 0);
-
-  console.log("First console output!");
-}
-
 function runFourthCodeSnippet() {
   function printHello() {
     console.log("Hello!");
   }
 
-  function blockForThreeSecond() {
-    // some stuff that takes 3 seconds to finish
-
-    sleep(3000);
-  }
-
   setTimeout(printHello, 0);
-
-  blockForThreeSecond();
 
   console.log("First console output!");
 }
