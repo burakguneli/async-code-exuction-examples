@@ -15,7 +15,8 @@
         </p>
 
         <code class="example-list-item-code-block">
-          const prefix = "Hi ";
+          const prefix = "Hi";
+          const name = "burak";
 
           function printData(data) {
             console.log(data);
@@ -25,11 +26,11 @@
 
           printData("welcome!");
 
-          console.log("task finished!");
+          console.log("welcoming our guest task is complete!");
         </code>
 
         <button class="example-list-item-action-button"
-                onclick="runFirstCodeSnippet('burak')">
+                onclick="runFirstCodeSnippet()">
           Run
         </button>
       </li>
@@ -42,6 +43,12 @@
         <code class="example-list-item-code-block">
           function printData(data) {
             console.log(data);
+          }
+
+          function evilFetchAndWaitFunction() {
+            sleep(2000);
+          
+            return "burak";
           }
         
           const fetchedData = evilFetchAndWaitFunction();
@@ -105,13 +112,18 @@
         </p>
 
         <code class="example-list-item-code-block">
-          function printData(response) {
-            jsonifyResponse(response).then(data => console.log(data.name));
+          function jsonifyResponse(response) {
+            return response.json();
+          }
+        
+          function printData(data) {
+            console.log(data.name);
           }
         
           const fetchedData = fetch("http://localhost:3000/url");
         
-          fetchedData.then(printData);
+          fetchedData.then(jsonifyResponse)
+                     .then(printData);
         
           console.log("First console output");
         </code>
@@ -139,7 +151,7 @@
           }
         
           function blockForThreeSecond() {
-            // some stuff that takes 3 seconds to finish
+            // some stuff that will take 3 seconds to finish
         
             sleep(3000);
           }

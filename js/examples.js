@@ -9,8 +9,9 @@ function evilFetchAndWaitFunction() {
   return "burak";
 }
 
-function runFirstCodeSnippet(name) {
+function runFirstCodeSnippet() {
   const prefix = "Hi";
+  const name = "burak";
 
   function printData(data) {
     console.log(data);
@@ -56,13 +57,18 @@ function runFourthCodeSnippet() {
 }
 
 function runFifthCodeSnippet() {
-  function printData(response) {
-    jsonifyResponse(response).then(data => console.log(data.name));
+  function jsonifyResponse(response) {
+    return response.json();
+  }
+
+  function printData(data) {
+    console.log(data.name);
   }
 
   const fetchedData = fetch("http://localhost:3000/url");
 
-  fetchedData.then(printData);
+  fetchedData.then(jsonifyResponse)
+             .then(printData);
 
   console.log("First console output");
 }
